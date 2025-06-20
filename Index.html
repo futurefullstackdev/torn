@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Torn XP-Farming Ledger — single-key edition</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>XP-Farming Ledger</h1>
+
+<!-- 1 ─ Global settings -->
+<section>
+  <label>My Torn ID
+    <input id="myId"  type="number" min="1" style="width:110px">
+  </label>
+  <label>My API key
+    <input id="myKey" size="46">
+  </label>
+  <label>$ per loss
+    <input id="price" type="number" step="10000" min="0" value="150000" style="width:110px">
+  </label>
+  <button id="saveCfg">Save & Refresh</button>
+</section>
+
+<!-- 2 ─ Live statistics -->
+<section id="stats" class="card">
+  <h2>Statistics</h2>
+  <ul>
+    <li>Total bought losses: <strong id="stLoss">0</strong></li>
+    <li>Total owed:          <strong id="stOwed">$0</strong></li>
+    <li>Already paid:        <strong id="stPaid">$0</strong></li>
+    <li>Outstanding:         <strong id="stOut">$0</strong></li>
+    <li>Best loss-seller:    <strong id="stBest">–</strong></li>
+    <li>Top earner:          <strong id="stTop">–</strong></li>
+  </ul>
+</section>
+
+<!-- 3 ─ Detail table -->
+<p id="status" style="font-style:italic;margin:.7rem 0;"></p>
+<table id="tbl"><thead>
+  <tr>
+    <th>✓</th><th>Attacker</th><th>Losses</th>
+    <th>Owes ($)</th><th>Paid ($)</th><th>Balance</th>
+  </tr>
+</thead><tbody></tbody></table>
+
+<button id="btnPaid">Mark selected as PAID</button>
+
+<script src="app.js"></script>
+</body>
+</html>
